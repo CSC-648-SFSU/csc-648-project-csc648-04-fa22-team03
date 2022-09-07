@@ -18,7 +18,7 @@
 
 
 | Student Name     | Student Email | GitHub Username | Stundet's role  
-|    :---:         | :---:         | :---:           |  
+|    :---:         | :---:         | :---:           |  :---:
 | Ruqaiyah Angeles | TODO          | Ruqaiyah22      | Team Leader  
 | Shahriz Malek    | TODO          | ShahrizSchool   | Front end lead  
 | Chris Solo       | TODO          | chrisxsolo      | Backend Lead  
