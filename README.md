@@ -17,8 +17,13 @@
 3. Fill out the table below
 
 
-| Student Name | Student Email | GitHub Username | Stundet's role 
-|    :---:     |     :---:     |     :---:       |
-| John Doe     | jdoe@mail.sfsu.edu              |   jdoe              |  Team Leader
+| Student Name     | Student Email | GitHub Username | Stundet's role
+|    :---:         | :---:         | :---:           |
+| Ruqaiyah Angeles | TODO          | Ruqaiyah22      | Team Leader
+| Shahriz Malek    | TODO          | ShahrizSchool   | Front end lead
+| Chris Solo       | TODO          | chrisxsolo      | Backend Lead
+| Ahmed Ballal     | TODO          | aballal-source  | Universal Helper
+| Aisha Asif       | TODO          | aishaasifm      | Scrum Master
+| Mandy Noto       | mnoto1@sfsu.edu           | mandynoto       | GitHub Master
 
 ## NO code needs to be stored in the root of your repository. You may rename the application folder if you like to your team's application name. But all source code related to your team's application should be stored inside the application folder.
