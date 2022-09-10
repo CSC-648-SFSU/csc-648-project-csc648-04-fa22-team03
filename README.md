@@ -19,7 +19,7 @@
 
 | Student Name     | Student Email            | GitHub Username | Stundet's role
 |    :---:         | :---:                    | :---:           |  :---:
-| Ruqaiyah Angeles | TODO                     | Ruqaiyah22      | Team Leader
+| Ruqaiyah Angeles | kangeles1@mail.sfsu.edu  | Ruqaiyah22      | Team Leader
 | Shahriz Malek    | smalek@mail.sfsu.edu     | ShahrizSchool   | Front end lead
 | Chris Solo       | csolorzano@mail.sfsu.edu | chrisxsolo      | Backend Lead
 | Ahmed Ballal     | aballal@mail.sfsu.edu    | aballal-source  | Universal Helper
