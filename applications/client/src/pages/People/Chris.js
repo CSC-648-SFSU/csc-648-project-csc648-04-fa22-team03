@@ -4,9 +4,9 @@ function Chris() {
     return (
       <div>
         <h1>This is the about Chris </h1>
-        <h1>Name: </h1>
-        <h1>Role: </h1>
-        <img src="logo192.png" alt="Chris" /> 
+        <h1>Name: Christopher Solorzano </h1>
+        <h1>Role: Front-end Lead </h1>
+        <img src="IMG_9289.png" alt="Chris" /> 
       </div>
     );
   }
