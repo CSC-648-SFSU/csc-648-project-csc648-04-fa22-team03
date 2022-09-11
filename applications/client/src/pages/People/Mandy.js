@@ -6,7 +6,7 @@ function Mandy() {
         <h1>This is the about Mandy </h1>
         <h1>Name: Mandy Noto </h1>
         <h1>Role: GitHub Master </h1>
-        <img src="logo192.png" />
+        <img src="mandy.png" alt="mandy" />
       </div>
     );
   }

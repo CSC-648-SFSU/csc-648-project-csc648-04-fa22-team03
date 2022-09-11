@@ -6,7 +6,7 @@ function Shahriz() {
         <h1>This is the about Shahriz </h1>
         <h1>Name: Shahriz</h1>
         <h1>Role: Front-end Lead</h1>
-        <img src="Shahriz.png"/>
+        <img src="Shahriz.png" alt="shahriz"/>
       </div>
     );
   }
