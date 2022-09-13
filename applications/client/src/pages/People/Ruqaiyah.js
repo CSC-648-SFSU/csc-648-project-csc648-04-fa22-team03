@@ -6,7 +6,7 @@ function Ruqaiyah() {
         <h1>This is the about Ruqaiyah </h1>
         <h1>Name: Ruqaiyah Angeles</h1>
         <h1>Role: Team Lead</h1>
-        <img src="ruqaiyah.png" alt="ruqaiyah" />
+        <img className = "aboutpics" src="ruqaiyah.png" alt="ruqaiyah" />
        
       </div>
     );
