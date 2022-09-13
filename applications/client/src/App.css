@@ -1,10 +1,22 @@
 .App {
   text-align: center;
+
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Rubik', sans-serif;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.aboutpics{
+  max-width: 70%;
 }
 
 @media (prefers-reduced-motion: no-preference) {

@@ -1,62 +1,44 @@
 import './App.css';
-import {useState, useEffect } from "react";
-import Axios from "axios";
+import Navbar from './components/Navbar/Navbar';
+import About from "./pages/About";
+import IDK from "./pages/IDK"
+import Home from "./pages/Home"
+import { Route, Routes } from 'react-router-dom';
+import Ahmed from "./pages/People/Ahmed";
+import Chris from "./pages/People/Chris";
+import Ruqaiyah from "./pages/People/Ruqaiyah";
+import Aisha from "./pages/People/Aisha";
+import Mandy from "./pages/People/Mandy";
+import Shahriz from "./pages/People/Shahriz";
+
+
 
 function App() {
-  const [listOfUsers, setListOfUsers] = useState([]);
-  const [name, setName] = useState("");
-  const [age, setAge] = useState(0);
-  const [username, setUsername] = useState("");
-  
-  useEffect(() => {
-    Axios.get("http://localhost:3001/getUsers").then((response) => {
-      setListOfUsers(response.data);
-    })
-  }, []);
-
-  const createUser = () => {
-      Axios.post("http://localhost:3001/createUser", {
-        name, 
-        age, 
-        username
-      }).then((response) => {
-        setListOfUsers([...listOfUsers, {
-          name, 
-          age, 
-          username
-        }])
-      })
-  }
-
   return (
     <div className="App">
-        <div className="usersDisplay">
-          {listOfUsers.map((user) => {
-            return (
-            <div>
-              <h1> Name: {user.name} </h1>
-              <h1> Age: {user.age} </h1>
-              <h1> Username: {user.username} </h1>
-            </div>
-            );
-          })}
-        </div>
 
-        <div>
-          <input type="text" placeholder="Name..." 
-          onChange={(event) => {
-            setName(event.target.value);
-          }}/>
-          <input type="Number" placeholder="Age..." 
-          onChange={(event) => {
-            setAge(event.target.value);
-          }}/>
-          <input type="text" placeholder="Username..." 
-          onChange={(event) => {
-            setUsername(event.target.value);
-          }}/>
-          <button onClick={createUser}> Create User </button>
+      <>
+        <Navbar />
+        <div className='cont'>
+          <Routes>
+            <Route path="/Home" element={<Home />} />
+            <Route path="/About/*" element={<About />} />
+            <Route path="/IDK" element={<IDK />} />
+          </Routes>
         </div>
+        <div className="cont">
+          <Routes>
+            <Route path="/Ahmed" element={<Ahmed />} />
+            <Route path="/Aisha" element={<Aisha />} />
+            <Route path="/Chris" element={<Chris />} />
+            <Route path="/Mandy" element={<Mandy />} />
+            <Route path="/Shahriz" element={<Shahriz />} />
+            <Route path="/Ruqaiyah" element={<Ruqaiyah />} />
+          </Routes>
+        </div>
+      </>
+
+
     </div>
   );
 }
