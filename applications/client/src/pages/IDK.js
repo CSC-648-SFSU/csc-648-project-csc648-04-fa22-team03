@@ -99,23 +99,6 @@ export default function IDK(){
                         </div>
                     )
                 })}
-            
-            {listOfOrders.map((order) => {
-                    return (
-                        <div>
-                            <h1>Name: {order.name}</h1>
-                            <h1>Age: {order.age}</h1>
-                            <h1>Username: {order.username}</h1>
-                            <h1>Email: {order.email}</h1>
-                            <h1>Grade Level: {order.gl}</h1>
-                            <h1>Password: {order.password}</h1>
-                            <h1>studentID: {order.sID}</h1>
-                            <h1>--------------------------------</h1>
-                        </div>
-                    )
-                })}
-        
-                
             </div>
 
             <div>
