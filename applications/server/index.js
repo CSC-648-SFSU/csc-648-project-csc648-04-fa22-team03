@@ -2,7 +2,8 @@ const express = require("express");
 const app = express();
 const mongoose = require('mongoose');
 const UserModel = require('./models/Users');
-
+const OrderModel = require('./models/Orders')
+const ProductModel = require("./models/Products");
 const cors = require('cors'); 
 
 app.use(express.json());
@@ -30,6 +31,44 @@ app.post("/createUser", async (req, res) => {
     await newUser.save();
 
     res.json(user);
+})
+
+app.get("/getOrders", (req, res) => {
+    OrderModel.find({}, (err, result) => {
+        if(err) {
+            res.json(err);
+        } 
+        else{
+            res.json(result);
+        }
+    })
+})
+
+app.post("/createOrder", async (req, res) => {
+    const order = req.body;
+    const newOrder = new OrderModel(order);
+    await newOrder.save();
+
+    res.json(order);
+})
+
+app.get("/getProduct", (req, res) => {
+    ProductModel.find({}, (err, result) => {
+        if(err) {
+            res.json(err);
+        } 
+        else{
+            res.json(result);
+        }
+    })
+})
+
+app.post("/createProduct", async (req, res) => {
+    const product = req.body;
+    const newProduct = new ProductModel(product);
+    await newProduct.save();
+
+    res.json([product]);
 })
 
 app.listen(3001, () => {
