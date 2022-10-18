@@ -17,7 +17,7 @@
 3. Fill out the table below
 
 
-| Student Name     | Student Email            | GitHub Username | Stundet's role
+| Student Name     | Student Email            | GitHub Username | Student's role
 |    :---:         | :---:                    | :---:           |  :---:
 | Ruqaiyah Angeles | kangeles1@mail.sfsu.edu  | Ruqaiyah22      | Team Leader
 | Shahriz Malek    | smalek@mail.sfsu.edu     | ShahrizSchool   | Front end lead
