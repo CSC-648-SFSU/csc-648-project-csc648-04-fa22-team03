@@ -65,10 +65,10 @@ app.get("/getProduct", (req, res) => {
 
 app.post("/createProduct", async (req, res) => {
     const product = req.body;
-    const newProduct = new ProductModel(product);
+    const newProduct = new ProductModel(user);
     await newProduct.save();
 
-    res.json([product]);
+    res.json(product);
 })
 
 app.listen(3001, () => {
