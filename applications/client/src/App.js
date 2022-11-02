@@ -2,6 +2,7 @@ import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import About from "./pages/About";
 import IDK from "./pages/IDK"
+import Product from "./pages/Product"
 import Home from "./pages/Home"
 import { Route, Routes } from 'react-router-dom';
 import Ahmed from "./pages/People/Ahmed";
@@ -23,6 +24,7 @@ function App() {
           <Routes>
             <Route path="/Home" element={<Home />} />
             <Route path="/About/*" element={<About />} />
+            <Route path="/Product/*" element={<Product />} />
             <Route path="/IDK" element={<IDK />} />
           </Routes>
         </div>

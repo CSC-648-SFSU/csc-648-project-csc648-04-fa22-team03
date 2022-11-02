@@ -26,6 +26,8 @@ class Navbar extends Component {
                         <CustomLink to="/Home">Home </CustomLink>
                         <CustomLink to="/About">About </CustomLink>
                         <CustomLink to="/IDK">IDK </CustomLink>
+                        <CustomLink to="/Product">Product </CustomLink>
+
 
                         {/* {MenuItems.map((item, index) => {
         return (
