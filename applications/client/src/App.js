@@ -11,6 +11,9 @@ import Ruqaiyah from "./pages/People/Ruqaiyah";
 import Aisha from "./pages/People/Aisha";
 import Mandy from "./pages/People/Mandy";
 import Shahriz from "./pages/People/Shahriz";
+import Awake from './pages/products/Awake';
+
+
 
 
 
@@ -30,6 +33,7 @@ function App() {
         </div>
         <div className="cont">
           <Routes>
+          <Route path="/Awake" element={<Awake />} />
             <Route path="/Ahmed" element={<Ahmed />} />
             <Route path="/Aisha" element={<Aisha />} />
             <Route path="/Chris" element={<Chris />} />
