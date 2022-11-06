@@ -12,6 +12,8 @@ import Aisha from "./pages/People/Aisha";
 import Mandy from "./pages/People/Mandy";
 import Shahriz from "./pages/People/Shahriz";
 import Awake from './pages/products/Awake';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
 
 
 
@@ -29,6 +31,8 @@ function App() {
             <Route path="/About/*" element={<About />} />
             <Route path="/Product/*" element={<Product />} />
             <Route path="/IDK" element={<IDK />} />
+            <Route path="/Login" element={<Login />} />
+            <Route path="/Signup" element={<Signup />} />
           </Routes>
         </div>
         <div className="cont">
