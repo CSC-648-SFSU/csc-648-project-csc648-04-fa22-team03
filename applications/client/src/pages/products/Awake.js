@@ -1,4 +1,3 @@
-
 import React from "react";
 
 function Awake() {
@@ -19,5 +18,4 @@ function Awake() {
 
     );
   }
-
-  export default Awake;
+export default Awake;
