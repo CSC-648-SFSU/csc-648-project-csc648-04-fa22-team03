@@ -18,5 +18,4 @@ function Awake() {
 
     );
   }
-
-  export default Awake;
+export default Awake;
