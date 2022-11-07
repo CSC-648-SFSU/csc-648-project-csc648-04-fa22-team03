@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const mongoose = require('mongoose');
 const UserModel = require('./models/Users');
+const CartModel = require('./models/Cart')
 const OrderModel = require('./models/Orders')
 const ProductModel = require("./models/Products");
 const cors = require('cors'); 
@@ -10,9 +11,9 @@ app.use(express.json());
 app.use(cors());
 
 mongoose.connect(
-    "mongodb+srv://SWEDebuggers:192Faj279da@cluster0.6cjmuit.mongodb.net/csc648Data?retryWrites=true&w=majority"
-
+    "mongodb+srv://SWEDebuggers:192Faj279da@fagrance.xeeioqu.mongodb.net/?retryWrites=true&w=majority"
 );
+
 
 //can move this to routes.js, if needed. 
 app.get("/getUsers", (req, res) => {
@@ -32,6 +33,24 @@ app.post("/createUser", async (req, res) => {
 
     res.json(user);
 })
+app.get("/getCart", (req, res) => {
+    CartModel.find({}, (err , result) => {
+        if(err) {
+            res.json(err);
+        } else {
+            res.json(result);
+        }
+    });
+});
+app.post("/createCart", async (req, res) => {
+    const cart = req.body;
+    const newCart = new CartModel(cart);
+    await newCart.save();
+
+    res.json(cart);
+})
+
+
 
 app.get("/getOrders", (req, res) => {
     OrderModel.find({}, (err, result) => {
