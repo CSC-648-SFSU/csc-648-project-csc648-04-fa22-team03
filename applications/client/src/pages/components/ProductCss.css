@@ -1,157 +1,124 @@
+/* Font */
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
 
-*{
-	box-sizing: border-box;
-	padding:0;
-	margin: 0;
+/* Design */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
+
+.html {
+  background-color: #ecf9ff;
+}
+
+.body {
+  color: #272727;
+  font-family: 'Quicksand', serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
+  padding: 1rem;
+}
+
+.main{
+	max-width: 1200px;
+  margin: 0 auto;
+
+}
+
+.h1 {
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.btn {
+  color: #ffffff;
+  padding: 0.8rem;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  font-weight: 400;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+}
+
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+.title{
+	margin-top: 10%;
+}
+
+.cards {
+	
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cards_item {
+  display: flex;
+  padding: 1rem;
+}
+@media (min-width: 40rem) {
+	.cards_item {
+	  width: 50%;
+	}
+  }
   
-  body {
-	padding: 0;
-	margin: 0;
+  @media (min-width: 56rem) {
+	.cards_item {
+	  width: 33.33333333333%;
+	}
   }
 
+.card {
+  margin-top: 30%;
+  background-color: white;
+  border-radius: 0.25rem;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
 
+.card_content {
+  padding: 1rem;
+  background: linear-gradient(to bottom left, #EF8D9C 40%, #FFC39E 100%);
+}
 
-.grid-wrapper{
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	column-gap: 5%;
-	row-gap: 3em;
+.card_title {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  margin: 0px;
+}
 
-
-		}
-
-		.main-container{
-			margin: 0 auto;
-			max-width: 1170px;
-			padding:2rem 1rem;
-			
-		}
-		
-
-        .caption{
-            color: white;
-            font-size: 10px;
-        }
-
-		.product-image{
-			width: 100%;
-			height: 100%;
-			border-color: black;
-			background-image: url(http://localhost:3000/awake.png);	
-		}
-
-			.box{
-				display: inline-block;
-				background-color: #ef4444;
-				color: #ffffff;
-				font-size: 24px;
-				list-style-type: none;
-				padding: 5rem 1rem;
-				text-align: center;
-				text-transform: capitalize;
-			 	font-weight: 600;
-			}
-
-			#box-01{
-				background-image: url(http://localhost:3000/awake.png);	
-				background-repeat: no-repeat;
-				background-size: 60%;	
-				background-position: center;		
-				background-position-y: 20%;
-			}
-
-			#box-02{
-				background-image: url(http://localhost:3000/relax.png);	
-				background-repeat: no-repeat;
-				background-size: 60%;	
-				background-position: center;		
-				background-position-y: 20%;
-
-			}
-
-			#box-03{
-				background-image: url(http://localhost:3000/neutralize.png);	
-				background-size: 60%;	
-				background-repeat: no-repeat;
-				background-position: center;		
-				background-position-y: 20%;
-			}
-
-			.product-title{
-				margin-top:50%;
-			}
-
-			.caption{
-				font-size: 60%;
-				margin-top: 10%;
-			}
-
-
-			.container {
-
-				margin-top: 10%;
-				height: 40rem;
-				
-				font-family: bold;
-				font-size:20px;
-				display: grid;
-				grid-template-columns: repeat(3, 1fr);
-				grid-template-rows: 50px 1fr 1fr 100px;
-				gap:20px;
-
-			}
-
-
-			.container div {
-				border: 1px solid black;
-			}
-
-			.header{
-				grid-column-start: 1;
-				grid-column-end:4 ;
-				margin-left: 20%;
-				margin-right: 20%;
-			}
-
-			.content-large{
-				grid-row-start: 2;
-				grid-row-end: span 2;
-				grid-column-start: 1;
-				grid-column-end: 3;
-			}
-
-			#awake{
-				background-image: url(http://localhost:3000/awake.png);
-				background-repeat: no-repeat;
-				background-size: 180%;	
-				background-position: center;		
-				background-position-y: 0%;	
-			}
-
-			#relax{
-				background-image: url(http://localhost:3000/relax.png);
-				background-repeat: no-repeat;
-				background-size: 180%;	
-				background-position: center;		
-				background-position-y: 0%;	
-			}
-
-			#neutralize{
-				background-image: url(http://localhost:3000/neutralize.png);
-				background-repeat: no-repeat;
-				background-size: 180%;	
-				background-position: center;		
-				background-position-y: 0%;	
-			}
-
-			#description{
-
-			}
-			#cart{
-				padding: 50px ;
-				text-align: center;
-			}
-
-
-		
+.card_text {
+  color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;    
+  font-weight: 400;
+}
+.made_by{
+  font-weight: 400;
+  font-size: 13px;
+  margin-top: 35px;
+  text-align: center;
+}

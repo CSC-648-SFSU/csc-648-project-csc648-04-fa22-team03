@@ -18,7 +18,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "sass:compile": "node-sass --include-path sass INPUT_FILE.scss OUTPUT_FILE.css"
   },
   "eslintConfig": {
     "extends": [

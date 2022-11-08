@@ -10,7 +10,9 @@ const cors = require('cors');
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect("mongodb://admin:4321@54.153.67.117:27017/");
+mongoose.connect(
+    "mongodb://admin:4321@54.153.67.117:27017/");
+
 
 //can move this to routes.js, if needed. 
 app.get("/getUsers", (req, res) => {
