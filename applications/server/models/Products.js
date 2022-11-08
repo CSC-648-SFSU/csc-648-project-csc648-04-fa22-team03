@@ -24,7 +24,11 @@ const ProductSchema = new mongoose.Schema({
     ProductImage: {
         data: Buffer, 
         contentType: String
-    }
+    },
+    ProductName: {
+        type: String, 
+        required: true
+    },
 });
 
 const ProductModel = mongoose.model("products", ProductSchema);
