@@ -3,6 +3,9 @@ import { Link, useMatch, useResolvedPath } from "react-router-dom"
 
 export default function SignupLink() {
     return (
+
+
+        
         <div className="boutdiv">
 
 <html lang="en">

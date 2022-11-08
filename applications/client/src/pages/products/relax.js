@@ -2,11 +2,16 @@ import React from "react";
 
 function Relax() {
     return (
-      <div>
-        <h1>This is the about Ahmed </h1>
-        <h1>Name: Ahmed Ballal</h1>
-        <h1>Role: SWE Helper</h1>
-        <img className = "aboutpics"src="Ahmed.png" alt="Ahmed"/>
+      <div class = "container"> 
+      <div class ="header">Relax</div>
+      <div class ="content-large" id ="relax">
+
+      </div>
+      <div class ="content-small" id = "description"> This will keep you nice and comfortable to help with social anxiety</div>
+      <div class ="content-small" id = "cart">
+           <form>Add to cart</form>
+      </div>
+
       </div>
     );
   }

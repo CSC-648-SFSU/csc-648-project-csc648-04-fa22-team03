@@ -115,15 +115,34 @@
 			}
 
 			.content-large{
+				grid-row-start: 2;
+				grid-row-end: span 2;
+				grid-column-start: 1;
+				grid-column-end: 3;
+			}
+
+			#awake{
 				background-image: url(http://localhost:3000/awake.png);
 				background-repeat: no-repeat;
 				background-size: 180%;	
 				background-position: center;		
 				background-position-y: 0%;	
-				grid-row-start: 2;
-				grid-row-end: span 2;
-				grid-column-start: 1;
-				grid-column-end: 3;
+			}
+
+			#relax{
+				background-image: url(http://localhost:3000/relax.png);
+				background-repeat: no-repeat;
+				background-size: 180%;	
+				background-position: center;		
+				background-position-y: 0%;	
+			}
+
+			#neutralize{
+				background-image: url(http://localhost:3000/neutralize.png);
+				background-repeat: no-repeat;
+				background-size: 180%;	
+				background-position: center;		
+				background-position-y: 0%;	
 			}
 
 			#description{
