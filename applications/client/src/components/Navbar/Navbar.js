@@ -26,6 +26,7 @@ class Navbar extends Component {
                         <CustomLink to="/Home">Home </CustomLink>
                         <CustomLink to="/About">About </CustomLink>
                         <CustomLink to="/IDK">IDK </CustomLink>
+                        <CustomLink to="/ShoppingCart">Shopping Cart </CustomLink>
                         <CustomLink to="/Product">Product </CustomLink>
                         <CustomLink to="/Login"><Button> Login </Button></CustomLink>
 
