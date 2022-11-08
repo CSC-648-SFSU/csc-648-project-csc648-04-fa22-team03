@@ -23,7 +23,7 @@ class Navbar extends Component {
                     </div>
                     <ul className={this.state.active ? 'nav-menu active' : 'nav-menu'}>
 
-                        <CustomLink to="/Home">Home </CustomLink>
+                        <CustomLink to="/Home" class = "custom">Home </CustomLink>
                         <CustomLink to="/About">About </CustomLink>
                         <CustomLink to="/IDK">IDK </CustomLink>
                         <CustomLink to="/ShoppingCart">Shopping Cart </CustomLink>
