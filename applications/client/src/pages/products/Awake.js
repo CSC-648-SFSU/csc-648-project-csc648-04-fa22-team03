@@ -54,17 +54,21 @@ function Awake() {
 
     return (
 
-        <div class = "container"> 
-        <div class ="header">Awake</div>
-        <div class ="content-large" id ="awake">
-
-        </div>
-        <div class ="content-small" id = "description"> Spray this perfume and it will give you energy to stay up! Helps maximize production</div>
-        <div class ="content-small" id = "cart">
-             <button onClick = {createCart}>Add to cart</button>
-        </div>
-
-        </div>
+        <div id="card">
+        <img src="/awake.png" alt=""></img>
+       <div id="content">
+        Awake
+         <ol>
+           <li>Great look</li>
+           <li> Good Smell </li>
+           <li> Good Feeling </li>
+         </ol>
+         <div id="price">
+         <button> $69 </button>
+         <button onClick = {createCart}> Add to cart </button>
+         </div>
+       </div>
+     </div>
 
 
     );
