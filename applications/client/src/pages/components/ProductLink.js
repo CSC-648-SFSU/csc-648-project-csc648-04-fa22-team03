@@ -1,11 +1,22 @@
 import React from "react"
 import { Link, useMatch, useResolvedPath } from "react-router-dom"
+import { useState, useEffect } from "react"
 import './ProductCss.css';
+import Axios from "axios"
 
 
 
 export default function ProductLink() {
   
+useEffect(() => {
+    Axios.get("http://localhost:3001/getProducts").then((response) => {
+        setListOfProducts(response.data)
+    })
+  })
+
+  const [listOfProducts, setListOfProducts] = useState([]);
+
+
     function redirectAwake() {
         window.location.replace("/Awake");
       }
@@ -21,40 +32,23 @@ export default function ProductLink() {
     return (
         <><div class="main">
             <div class="title"><h1>Product Page</h1></div>
+
+            {listOfProducts.map((products) => {
+                return (
             <ul class="cards">
                 <li class="cards_item">
                     <div class="card">
-                        <div class="card_image"><img src="/awake.png"></img></div>
+                        <div class="card_image"><img src={products.ProductImg}></img></div>
                         <div class="card_content">
                             <h2 class="card_title"></h2>
-                            <p class="card_text">Mitigates the efects of sleep deprivation</p>
-                           <button class = "btn card_btn" onClick={redirectAwake}>Awake</button>
+                            <p class="card_text">{products.ProductDescription}</p>
+                           <button class = "btn card_btn" onClick={redirectAwake}>{products.ProductName}</button>
                         </div>
                     </div>
                 </li>
-                <li class="cards_item">
-                    <div class="card">
-                        <div class="card_image"><img src="https://media.allure.com/photos/614351d3934fb87214166c42/1:1/w_1196,h_1196,c_limit/Yves%20Saint%20Laurent%20Mon%20Paris.jpeg"></img></div>
-                        <div class="card_content">
-                            <h2 class="card_title"></h2>
-                            <p class="card_text">Comforts when around strangers</p>
-                            <button class="btn card_btn"onClick={redirectRelax}>Relax</button>
-                        </div>
-                    </div>
-                </li>
-                <li class="cards_item">
-                    <div class="card">
-                        <div class="card_image"><img src="/neutralize.png"></img></div>
-                        <div class="card_content">
-                            <h2 class="card_title"></h2>
-                            <p class="card_text">Neutralize ones own smell</p>
-                            <button class="btn card_btn"onClick={redirectNeutralize}>Neutralize</button>
-                        </div>
-                    </div>
-                </li>
-                
-              
             </ul>
+             )
+            })}
         </div><h3 class="made_by">♡</h3></>
     )
 }

@@ -70,7 +70,7 @@ app.post("/createOrder", async (req, res) => {
     res.json(order);
 })
 
-app.get("/getProduct", (req, res) => {
+app.get("/getProducts", (req, res) => {
     ProductModel.find({}, (err, result) => {
         if(err) {
             res.json(err);
@@ -81,12 +81,12 @@ app.get("/getProduct", (req, res) => {
     })
 })
 
-app.post("/createProduct", async (req, res) => {
-    const product = req.body;
-    const newProduct = new ProductModel(user);
+app.post("/createProducts", async (req, res) => {
+    const products = req.body;
+    const newProduct = new ProductModel(products);
     await newProduct.save();
 
-    res.json(product);
+    res.json(products);
 })
 
 app.listen(3001, () => {
