@@ -31,17 +31,23 @@ function Neutralize() {
 
 
     return (
-      <div class = "container"> 
-      <div class ="header">Neutralize</div>
-      <div class ="content-large" id ="neutralize">
+      <div id="card">
+        <img src="/neutralize.png" alt=""></img>
+       <div id="content">
+        Neutralize
+         <ol>
+           <li>Great look</li>
+           <li> Good Smell </li>
+           <li> Good Feeling </li>
+         </ol>
+         <div id="price">
+         <button> $100 </button>
+         <button onClick = {createCart}> Add to cart </button>
+         </div>
+       </div>
+     </div>
 
-      </div>
-      <div class ="content-small" id = "description"> This will help neutralize your smell to make y ou nice and ordorless!</div>
-      <div class ="content-small" id = "cart">
-      <button onClick = {createCart}>Add to cart</button>
-      </div>
 
-      </div>
     );
   }
 
