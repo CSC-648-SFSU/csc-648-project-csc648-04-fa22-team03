@@ -8,10 +8,7 @@ import './Products.css'
 
 
 function Awake() {
-    var productId = 123
 
-
-    var name = 'awaken'
 
     // const createUser = () => {
     //     Axios.post("http://localhost:3001/createUser",{
@@ -27,27 +24,31 @@ function Awake() {
     //     });
     // };
 
-    var count =0
 
     const [listOfItems, setListOfItems] = useState([]);
     const [OrderNumber, setOrderNumber] = useState("");
     const [NumOfItems, setnumOfItems] = useState("");
     const [ProductName, setProductName] = useState("");
 
+    var count =0;
 
 
     const createCart = () => {
          var randomInt = Math.floor(Math.random() *100)
-         var awake = "awake"
+         var awake = "Awake"
+         var imgUrl = "/awake.png"
+         let price = 420;
+         count++;
         Axios.post("http://localhost:3001/createCart",{
             OrderNumber: randomInt,
             NumOfItems: count,
             ProductName: awake,
+            ProductPrice: price,
+            ProductImg: imgUrl
         }).then((response)=>{
             setListOfItems([...listOfItems,  {
                 OrderNumber, NumOfItems, ProductName
             }])
-            count ++
             alert("ADDED TO CART");
         });
     };

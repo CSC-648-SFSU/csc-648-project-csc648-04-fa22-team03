@@ -12,6 +12,14 @@ const CartSchema = new mongoose.Schema({
     ProductName:{
         type: String,
         required: true
+    },
+    ProductPrice:{
+        type:String,
+        required: true
+    },
+    ProductImg:{
+        type:String,
+        required: true
     }
 });
 
