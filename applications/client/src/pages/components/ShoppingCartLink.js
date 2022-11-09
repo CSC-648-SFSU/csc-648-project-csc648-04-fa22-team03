@@ -7,41 +7,97 @@ import Axios from "axios"
 export default function ShoppingCartLink() {
 
 
-
-    const [listOfItems, setListOfItems] = useState([]);
     const [OrderNumber, setOrderNumber] = useState("");
     const [NumOfItems, setnumOfItems] = useState("");
     const [ProductName, setProductName] = useState("");
 
 
-    useEffect(() => {
-    Axios.get("http://localhost:3001/getCart").then((response) => {
-        setListOfItems(response.data)
-    })
-}, []);
+
+
+//     useEffect(() => {
+//     Axios.get("http://localhost:3001/getCart").then((response) => {
+//         setListOfItems(response.data)
+//     })
+// }, []);
+
+
+useEffect(() => {
+  Axios.get("http://localhost:3001/getCart").then((response) => {
+      setListOfItems(response.data)
+  })
+})
+const [listOfItems, setListOfItems] = useState([]);
+
+
+
+let itemPrice = [];
+
+
+
+
+let total =0;
+
+
+{listOfItems.map((cart) => {
+
+    itemPrice = parseInt(cart.ProductPrice);
+    total += itemPrice;
+  
+})}
+
+
+
+
+
+
+
+
+
 
 
 
 return (
-    <div className="IDK">
-        <div className="userDisplay"> 
-            {listOfItems.map((cart) => {
+<body>
+  <div id="w">
+    <header id="title">
+      <h1>Fragrance Shopping Cart</h1>
+    </header>
+    <div id="page">
+      <table id="cart">
+        <thead>
+          <tr>
+            <th class="first">Photo</th>
+            <th class="second">Qty</th>
+            <th class="third">Product</th>
+            <th class="fourth">Line Total</th>
+            <th class="fifth">&nbsp;</th>
+          </tr>
+        </thead>
+        {listOfItems.map((cart) => {
                 return (
-                    <div>
-                        <h1>
-                            shopping cart
-                        </h1>
-                        <br></br>
-                        <h1>OrderNumber: {cart.OrderNumber}</h1>
-                        <h1>NumOfItems: {cart.NumOfItems}</h1>
-                        <h1>ProductName: {cart.ProductName}</h1>
-                        <h1>--------------------------------</h1>
-                    </div>
+        <tbody>
+          <tr class="productitm">
+            <td><img src={cart.ProductImg} class="thumb"></img></td>
+            <td><input type="number" value={cart.NumOfItems} min="0" max="99" class="qtyinput"></input></td>
+            <td>{cart.ProductName}</td>
+            <td>${cart.ProductPrice}</td>
+            <td><span class="remove"><img src="https://i.imgur.com/h1ldGRr.png" alt="X"></img></span></td>
+          </tr>
+        </tbody>
                 )
-            })}
-       
-        </div>
-        </div>
+      })}
+       <tr class="totalprice">
+            <td class="light">Total:</td>
+            <td colspan="2">&nbsp;</td>
+            <td colspan="2"><span class="thick">${total}</span></td>
+          </tr>
+        <tr class="checkoutrow">
+            <td colspan="5" class="checkout"><button id="submitbtn">Checkout Now!</button></td>
+          </tr>
+      </table>
+    </div>
+  </div>
+</body>
 
         
 )

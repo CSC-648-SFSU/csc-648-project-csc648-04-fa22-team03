@@ -16,15 +16,19 @@ function Neutralize() {
   const createCart = () => {
        var randomInt = Math.floor(Math.random() *100)
        var product = "Neutralize"
+       var imgUrl = "/neutralize.png"
+       let price =21;
+       count++;
       Axios.post("http://localhost:3001/createCart",{
           OrderNumber: randomInt,
           NumOfItems: count,
           ProductName: product,
+          ProductPrice: price,
+          ProductImg: imgUrl
       }).then((response)=>{
           setListOfItems([...listOfItems,  {
               OrderNumber, NumOfItems, ProductName
           }])
-          count ++
           alert("ADDED TO CART");
       });
   };
@@ -41,7 +45,7 @@ function Neutralize() {
            <li> Good Feeling </li>
          </ol>
          <div id="price">
-         <button> $100 </button>
+         <button> $100</button>
          <button onClick = {createCart}> Add to cart </button>
          </div>
        </div>

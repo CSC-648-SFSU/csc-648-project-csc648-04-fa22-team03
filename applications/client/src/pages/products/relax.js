@@ -15,16 +15,20 @@ function Relax() {
 
   const createCart = () => {
        var randomInt = Math.floor(Math.random() *100)
+       let price = 69;
+       var imgUrl = "/relax.png"
        var product = "Relax"
       Axios.post("http://localhost:3001/createCart",{
           OrderNumber: randomInt,
           NumOfItems: count,
           ProductName: product,
+          ProductPrice: price,
+          ProductImg: imgUrl
       }).then((response)=>{
           setListOfItems([...listOfItems,  {
               OrderNumber, NumOfItems, ProductName
           }])
-          count ++
+          count++;
           alert("ADDED TO CART");
       });
   };
