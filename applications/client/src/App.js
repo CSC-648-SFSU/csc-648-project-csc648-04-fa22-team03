@@ -3,6 +3,7 @@ import Navbar from './components/Navbar/Navbar';
 import About from "./pages/About";
 import IDK from "./pages/IDK"
 import ShoppingCart from "./pages/ShoppingCart"
+import CheckOut from "./pages/CheckOut"
 import Product from "./pages/Product"
 import Home from "./pages/Home"
 import { Route, Routes } from 'react-router-dom';
@@ -37,6 +38,8 @@ function App() {
             <Route path="/IDK" element={<IDK />} />
             <Route path="/Login" element={<Login />} />
             <Route path="/ShoppingCart" element={<ShoppingCart />} />
+            <Route path="/CheckOut" element={<CheckOut />} />
+
             <Route path="/Signup" element={<Signup />} />
           </Routes>
         </div>

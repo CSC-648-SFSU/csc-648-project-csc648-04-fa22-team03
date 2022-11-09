@@ -27,16 +27,10 @@ useEffect(() => {
   })
 })
 const [listOfItems, setListOfItems] = useState([]);
-
-
-
 let itemPrice = [];
 
 
-
-
 let total =0;
-
 
 {listOfItems.map((cart) => {
 
@@ -44,17 +38,6 @@ let total =0;
     total += itemPrice;
   
 })}
-
-
-
-
-
-
-
-
-
-
-
 
 return (
 <body>
