@@ -23,9 +23,15 @@ class Navbar extends Component {
                     </div>
                     <ul className={this.state.active ? 'nav-menu active' : 'nav-menu'}>
 
-                        <CustomLink to="/Home">Home </CustomLink>
+                        <CustomLink to="/Home" class = "custom">Home </CustomLink>
                         <CustomLink to="/About">About </CustomLink>
                         <CustomLink to="/IDK">IDK </CustomLink>
+                        <CustomLink to="/ShoppingCart">Shopping Cart </CustomLink>
+                        <CustomLink to="/CheckOut">Check out </CustomLink>
+
+                        <CustomLink to="/Product">Product </CustomLink>
+                        <CustomLink to="/Login"><Button> Login </Button></CustomLink>
+
 
                         {/* {MenuItems.map((item, index) => {
         return (
@@ -37,7 +43,7 @@ class Navbar extends Component {
         )
     })} */}
                     </ul>
-                    <Button> Sign Up </Button>
+                    
                 </nav>
         )
     }
