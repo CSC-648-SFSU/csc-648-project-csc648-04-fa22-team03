@@ -17,23 +17,44 @@ useEffect(() => {
   const [listOfProducts, setListOfProducts] = useState([]);
 
 
-    function redirectAwake() {
+
+    function Awake() {
         window.location.replace("/Awake");
       }
         
-    function redirectRelax() {
+    function Relax() {
         window.location.replace("/relax");
       }
         
-    function redirectNeutralize() {
+    function Neutralize() {
         window.location.replace("/Neutralize");
       }
+
+
+      function click(redirectName){
+        redirect(redirectName);
+      }
+      function redirect(redirectName){
+      {listOfProducts.map((products) => {
+       
+            if(redirectName == "Awake"){
+               Awake();
+            }
+            if(redirectName == "Relax"){
+                Relax();
+            }
+            if(redirectName == "Neutralize"){
+                Neutralize();
+            }
+    })}
+}
 
     return (
         <><div class="main">
             <div class="title"><h1>Product Page</h1></div>
 
             {listOfProducts.map((products) => {
+                 var redirectName = products.ProductName;
                 return (
             <ul class="cards">
                 <li class="cards_item">
@@ -42,7 +63,7 @@ useEffect(() => {
                         <div class="card_content">
                             <h2 class="card_title"></h2>
                             <p class="card_text">{products.ProductDescription}</p>
-                           <button class = "btn card_btn" onClick={redirectAwake}>{products.ProductName}</button>
+                            <button class = "btn card_btn" onClick={()=>click(redirectName)}>{products.ProductName}</button>
                         </div>
                     </div>
                 </li>
