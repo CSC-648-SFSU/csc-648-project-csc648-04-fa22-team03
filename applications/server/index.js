@@ -106,7 +106,22 @@ app.delete('/delete/:productId', async (req,res) =>{
     res.send("itemdeleted");
 })
 
+app.put('/update', async (req,res) =>{
+    const newQuantity = req.body.newQuantity
+    const id = req.body.id
 
+    try {
+        await CartModel.findById(id, (error, itemToUpdate) => {
+             itemToUpdate.NumOfItems= Number(newQuantity);
+            itemToUpdate.save();
+
+        })
+
+    } catch(err) {
+        console.log(err)
+    }
+
+}) 
 
 
 
