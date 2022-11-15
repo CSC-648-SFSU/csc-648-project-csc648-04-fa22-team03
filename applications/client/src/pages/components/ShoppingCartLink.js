@@ -21,6 +21,8 @@ export default function ShoppingCartLink() {
 // }, []);
 
 
+
+
 useEffect(() => {
   Axios.get("http://localhost:3001/getCart").then((response) => {
       setListOfItems(response.data)
@@ -29,15 +31,45 @@ useEffect(() => {
 const [listOfItems, setListOfItems] = useState([]);
 let itemPrice = [];
 
+const updateQuantity = (id) => {
+  const newQuantity = prompt("Enter new quantity");
+  Axios.put("http://localhost:3001/update", { newQuantity: newQuantity, id: id}).then(()=> {
+    setListOfItems(listOfItems.map((cart)=> {
+      return cart._id == id ? {_id: id, ProductName: ProductName, NumOfItems: newQuantity} : cart
+    }))
+  });
+}
 
 let total =0;
+let itemQuantity =0;
 
+const deleteProduct = (productId) => {
+  Axios.delete(`http://localhost:3001/delete/${productId}`).then(() =>{
+  setListOfItems(
+    listOfItems.filter((cart) => {
+    return cart._id != productId;
+  })
+  );
+});
+};
+
+ let actualItemPrice = [];
 {listOfItems.map((cart) => {
 
+    itemQuantity = parseInt(cart.NumOfItems);
     itemPrice = parseInt(cart.ProductPrice);
+    actualItemPrice =parseInt(cart.ProductPrice);
+
     total += itemPrice;
-  
-})}
+
+    if(itemQuantity > 1){
+     total = total * itemQuantity;
+     
+    }
+
+
+})
+}
 
 return (
 <body>
@@ -61,10 +93,10 @@ return (
         <tbody>
           <tr class="productitm">
             <td><img src={cart.ProductImg} class="thumb"></img></td>
-            <td><input type="number" value={cart.NumOfItems} min="0" max="99" class="qtyinput"></input></td>
+            <td><button onClick={() => {updateQuantity(cart._id)}}><input type="number" value={cart.NumOfItems} min="0" max="99" class="qtyinput"></input></button></td>
             <td>{cart.ProductName}</td>
             <td>${cart.ProductPrice}</td>
-            <td><span class="remove"><img src="https://i.imgur.com/h1ldGRr.png" alt="X"></img></span></td>
+            <td><button onClick={() => {deleteProduct(cart._id)}}><span class="remove"><img src="https://i.imgur.com/h1ldGRr.png" alt="X"></img></span></button></td>
           </tr>
         </tbody>
                 )

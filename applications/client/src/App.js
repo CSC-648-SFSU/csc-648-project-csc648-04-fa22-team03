@@ -39,7 +39,6 @@ function App() {
             <Route path="/Login" element={<Login />} />
             <Route path="/ShoppingCart" element={<ShoppingCart />} />
             <Route path="/CheckOut" element={<CheckOut />} />
-
             <Route path="/Signup" element={<Signup />} />
           </Routes>
         </div>
