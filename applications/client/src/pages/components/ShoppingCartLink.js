@@ -41,6 +41,7 @@ const updateQuantity = (id) => {
 }
 
 let total =0;
+let itemQuantity =0;
 
 const deleteProduct = (productId) => {
   Axios.delete(`http://localhost:3001/delete/${productId}`).then(() =>{
@@ -52,10 +53,19 @@ const deleteProduct = (productId) => {
 });
 };
 
+ let actualItemPrice = [];
 {listOfItems.map((cart) => {
 
+    itemQuantity = parseInt(cart.NumOfItems);
     itemPrice = parseInt(cart.ProductPrice);
+    actualItemPrice =parseInt(cart.ProductPrice);
+
     total += itemPrice;
+
+    if(itemQuantity > 1){
+     total = total * itemQuantity;
+     
+    }
 
 
 })
