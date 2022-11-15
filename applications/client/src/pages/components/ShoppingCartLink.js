@@ -21,6 +21,8 @@ export default function ShoppingCartLink() {
 // }, []);
 
 
+
+
 useEffect(() => {
   Axios.get("http://localhost:3001/getCart").then((response) => {
       setListOfItems(response.data)
@@ -32,12 +34,24 @@ let itemPrice = [];
 
 let total =0;
 
+const deleteProduct = (productId) => {
+  Axios.delete(`http://localhost:3001/delete/${productId}`).then(() =>{
+  setListOfItems(
+    listOfItems.filter((cart) => {
+    return cart._id != productId;
+  })
+  );
+});
+};
+
 {listOfItems.map((cart) => {
 
     itemPrice = parseInt(cart.ProductPrice);
     total += itemPrice;
-  
-})}
+
+
+})
+}
 
 return (
 <body>
@@ -64,7 +78,7 @@ return (
             <td><input type="number" value={cart.NumOfItems} min="0" max="99" class="qtyinput"></input></td>
             <td>{cart.ProductName}</td>
             <td>${cart.ProductPrice}</td>
-            <td><span class="remove"><img src="https://i.imgur.com/h1ldGRr.png" alt="X"></img></span></td>
+            <td><button onClick={() => {deleteProduct(cart._id)}}><span class="remove"><img src="https://i.imgur.com/h1ldGRr.png" alt="X"></img></span></button></td>
           </tr>
         </tbody>
                 )

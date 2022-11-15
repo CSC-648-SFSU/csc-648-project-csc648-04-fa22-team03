@@ -70,6 +70,17 @@ app.post("/createOrder", async (req, res) => {
     res.json(order);
 })
 
+
+// app.push("/deleteItem", async (req, res) => {
+//     const item = req.body;
+//     const newItem = new ItemModel(item);
+//     await newOrder.save();
+
+//     res.json(order);
+// })
+
+
+
 app.get("/getProducts", (req, res) => {
     ProductModel.find({}, (err, result) => {
         if(err) {
@@ -88,6 +99,16 @@ app.post("/createProducts", async (req, res) => {
 
     res.json(products);
 })
+
+app.delete('/delete/:productId', async (req,res) =>{
+    const productId = req.params.productId
+    await CartModel.findByIdAndRemove(productId).exec()
+    res.send("itemdeleted");
+})
+
+
+
+
 
 app.listen(3001, () => {
     console.log("SERVER RUNS!");
