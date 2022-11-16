@@ -41,7 +41,7 @@ export default function LoginLink() {
     )
 }
 
-function CustomLink({ to, children, ...props }) {
+/*function CustomLink({ to, children, ...props }) {
     const resolvedPath = useResolvedPath(to)
     const isActive = useMatch({ path: resolvedPath.pathname, end: true })
     return (
@@ -51,4 +51,4 @@ function CustomLink({ to, children, ...props }) {
             </Link>
         </li>
     )
-}
+}*/
