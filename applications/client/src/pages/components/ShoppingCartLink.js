@@ -28,6 +28,13 @@ useEffect(() => {
       setListOfItems(response.data)
   })
 })
+
+
+function redirectCheckOut() {
+  window.location.replace("/CheckOut");
+}
+
+
 const [listOfItems, setListOfItems] = useState([]);
 let itemPrice = [];
 
@@ -107,7 +114,7 @@ return (
             <td colspan="2"><span class="thick">${total}</span></td>
           </tr>
         <tr class="checkoutrow">
-            <td colspan="5" class="checkout"><button id="submitbtn">Checkout Now!</button></td>
+            <td colspan="5" class="checkout"><button onClick ={redirectCheckOut} id="submitbtn">Checkout Now!</button></td>
           </tr>
       </table>
     </div>
