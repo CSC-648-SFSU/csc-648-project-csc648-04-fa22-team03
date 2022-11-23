@@ -31,6 +31,7 @@ const [listOfItems, setListOfItems] = useState([]);
 let itemPrice = [];
 
 
+
 let total =0;
 
 {listOfItems.map((cart) => {
