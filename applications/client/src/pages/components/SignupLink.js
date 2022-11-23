@@ -1,71 +1,91 @@
 import { Link, useMatch, useResolvedPath } from "react-router-dom"
+import Axios from "axios"
+import { useState, useEffect } from "react"
+import './SignupLink.css';
+
+
+
 
 
 export default function SignupLink() {
+
+    useEffect(() => {
+        Axios.get("http://localhost:3001/getUsers").then((response) => {
+            setListOfUsers(response.data)
+        })
+    }, []);
+
+    //Users
+    const [listOfUsers, setListOfUsers] = useState([]);
+    const [name, setName] = useState("");
+   
+    const [password, setPassword] = useState("");
+    const [email, setEmail] = useState("");
+
+    const createUser = () => {
+        redirect();
+        Axios.post("http://13.52.253.222:3000/createUser", {
+            name, email, password
+        }).then((response) => {
+            setListOfUsers([...listOfUsers,  {
+                name, email, password
+            }])
+        })
+
+        Axios.post("http://localhost:3001/createUser", {
+            name, email, password
+        }).then((response) => {
+            setListOfUsers([...listOfUsers,  {
+                name, email, password
+            }])
+        })
+    }
+
+    function redirect() {
+        window.location.replace("/Login");
+      }
+
+
     return (
-
-
-        
-        <div className="boutdiv">
-
-<html lang="en">
-    <head>
-        <meta charset="utf-8"></meta>
-        <title>Login Form</title>
-        <link rel="stylesheet" href="LoginLink.css"></link>
-    </head>
-    <body>
-        <div class="center">
-            <h1>Signup</h1>
-            <form method="post">
-                <div class="txt_field">
-                    <input type="text" required></input>
-                    <span></span>
-                    <label>Name</label>
-                </div>
-                <div class="txt_field">
-                    <input type="text" required></input>
-                    <span></span>
-                    <label>Age</label>
-                </div>
-                <div class="txt_field">
-                    <input type="text" required></input>
-                    <span></span>
-                    <label>E-mail</label>
-                </div>
-                <div class="txt_field">
-                    <input type="text" required></input>
-                    <span></span>
-                    <label>Student ID</label>
-                </div>
-                <div class="txt_field">
-                    <input type="text" required></input>
-                    <span></span>
-                    <label>Grade Level</label>
-                </div>
-                <div class="txt_field">
-                    <input type="password" required></input>
-                    <label>Password</label>
-                    <span></span>
-                </div>
-                <div class="txt_field">
-                    <input type="password" required></input>
-                    <label>Confirm Password</label>
-                    <span></span>
-                </div>
-            
-                <input type="submit" value="Create Account"></input>
-                <div class="login_link">
-                    Already have an account? <a href="#"><Link to="/Login">Login</Link></a>
-                </div>
+        <html lang="en" dir="ltr">
+        <body>
+          <div class="wrapper">
+            <h2>Registration</h2>
+            <form action="#">
+              <div class="input-box">
+                <input type="text" placeholder="Enter your name" onChange={(event) => {
+                    setName(event.target.value);
+                }}/>
+              </div>
+              <div class="input-box">
+                <input type="text" placeholder="Enter your email"  onChange={(event) => {
+                    setEmail(event.target.value);
+                }}/>
+              </div>
+              <div class="input-box">
+                <input type="password" placeholder="Create password" onChange={(event) => {
+                    setPassword(event.target.value);
+                }}/>
+              </div>
+              <div class="input-box">
+                <input type="password" placeholder="Confirm password" required></input>
+              </div>
+              <div class="policy">
+                <input type="checkbox"></input>
+                <h3>I accept all terms & condition</h3>
+              </div>
+              <div class="input-box button">
+                <input type="Submit" onClick={createUser} value="Register Now"></input>
+              </div>
+              <div class="text">
+                <button onClick={redirect}><h3>Already have an account? Login now</h3></button>
+              </div>
             </form>
-        </div>
-    </body>
-</html>
-            <ul>
-            
-            </ul>
-        </div>
+          </div>
+        </body>
+        </html>
+        
+
     )
 }
 
