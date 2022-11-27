@@ -71,10 +71,7 @@ const deleteProduct = (productId) => {
 
     if(itemQuantity > 1){
      total = total * itemQuantity;
-     
     }
-
-
 })
 }
 
@@ -96,6 +93,10 @@ return (
           </tr>
         </thead>
         {listOfItems.map((cart) => {
+          var x =0; 
+          var y =1; 
+
+          if(x < y){
                 return (
         <tbody>
           <tr class="productitm">
@@ -107,6 +108,7 @@ return (
           </tr>
         </tbody>
                 )
+          }
       })}
        <tr class="totalprice">
             <td class="light">Total:</td>

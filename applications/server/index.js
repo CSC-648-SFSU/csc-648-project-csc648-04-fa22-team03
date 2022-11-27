@@ -122,6 +122,22 @@ app.put('/update', async (req,res) =>{
     }
 
 }) 
+app.put('/addProduct', async (req,res) =>{
+    const newProduct = req.body.newProduct
+    const id = req.body.id
+
+    try {
+        await UserModel.findById(id, (error, newProduct) => {
+            newproduct.product= newProduct;
+            newProduct.save();
+
+        })
+
+    } catch(err) {
+        console.log(err)
+    }
+
+}) 
 
 
 
