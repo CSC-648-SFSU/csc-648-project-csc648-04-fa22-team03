@@ -1,6 +1,8 @@
 import "./components/CheckOut.css";
 import { Route, Routes } from "react-router-dom"
 import CheckOutLink from "./components/CheckOutLink";
+import Orders from "./components/OrdersLink";
+
 
 
 
@@ -12,7 +14,7 @@ export default function CheckOut(){
             <div className="cont">
                 <CheckOutLink />  
                 <Routes>
-             
+                <Route path="/userOrders" element={<Orders />} />
                 </Routes>
             </div>
         </>   

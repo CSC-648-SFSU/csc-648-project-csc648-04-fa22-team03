@@ -3,6 +3,8 @@ import Navbar from './components/Navbar/Navbar';
 import About from "./pages/About";
 import IDK from "./pages/IDK"
 import ShoppingCart from "./pages/ShoppingCart"
+import Orders from "./pages/Orders"
+
 import CheckOut from "./pages/CheckOut"
 import Product from "./pages/Product"
 import Home from "./pages/Home"
@@ -39,8 +41,8 @@ function App() {
             <Route path="/Login" element={<Login />} />
             <Route path="/ShoppingCart" element={<ShoppingCart />} />
             <Route path="/CheckOut" element={<CheckOut />} />
-
             <Route path="/Signup" element={<Signup />} />
+            <Route path="/Orders" element={<Orders />} />
           </Routes>
         </div>
         <div className="cont">
@@ -48,6 +50,7 @@ function App() {
           <Route path="/Awake" element={<Awake />} />
           <Route path="/Neutralize" element={<Neutralize />} />
           <Route path="/relax" element={<Relax />} />
+
 
             <Route path="/Ahmed" element={<Ahmed />} />
             <Route path="/Aisha" element={<Aisha />} />

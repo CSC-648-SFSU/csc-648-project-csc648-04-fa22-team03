@@ -2,11 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
 
 /* Design */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+
 
 .html {
   background-color: #ecf9ff;
@@ -61,7 +57,6 @@ img {
 }
 
 .cards {
-	
   display: flex;
   flex-wrap: wrap;
   list-style: none;
