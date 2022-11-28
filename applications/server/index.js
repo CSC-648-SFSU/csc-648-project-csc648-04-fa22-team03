@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(cors());
 
 mongoose.connect(
-    "mongodb://admin:4321@54.153.67.117:27017/");
+    "mongodb://admin:4321@13.52.100.0:27017/");
 
 
 //can move this to routes.js, if needed. 
