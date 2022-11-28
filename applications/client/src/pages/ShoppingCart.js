@@ -7,7 +7,6 @@ import CheckOut from "./components/CheckOutLink";
 
 
 export default function ShoppingCart() {
-
     return (
         <>
             <div className="cont">

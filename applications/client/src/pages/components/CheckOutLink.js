@@ -30,6 +30,12 @@ useEffect(() => {
 const [listOfItems, setListOfItems] = useState([]);
 let itemPrice = [];
 
+function redirect() {
+    console.log("hello");
+    window.location.replace("/UserOrders");
+  }
+
+
 
 
 let total =0;
@@ -96,7 +102,7 @@ return (
                 </div>
             </div>
             <div class="btns">
-                <button>Purchase</button>
+                <button onClick={redirect}>Purchase</button>
                 <button>Back to cart</button>
             </div>
         </form>
