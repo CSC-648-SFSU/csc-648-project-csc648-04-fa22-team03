@@ -29,29 +29,59 @@ function Awake() {
     const [OrderNumber, setOrderNumber] = useState("");
     const [NumOfItems, setnumOfItems] = useState("");
     const [ProductName, setProductName] = useState("");
+    const [ProductTime, setProductTime] = useState("");    
+
 
     var count =0;
 
 
+    //using your function (passing in date)
+function formatAMPM(date) {
+  var d = new Date(),
+  minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+  hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+  ampm = d.getHours() >= 12 ? 'pm' : 'am',
+  months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+  days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+return days[d.getDay()]+' '+months[d.getMonth()]+' '+d.getDate()+' '+d.getFullYear()+' '+hours+':'+minutes+ampm;
+}
+
+
+let date = formatAMPM();
+
+
     const createCart = () => {
-         var randomInt = Math.floor(Math.random() *100)
          var awake = "Awake"
          var imgUrl = "/awake.png"
          let price = 420;
          count++;
+         let randomInt = makeid(10);
+         
         Axios.post("http://localhost:3001/createCart",{
             OrderNumber: randomInt,
             NumOfItems: count,
             ProductName: awake,
             ProductPrice: price,
-            ProductImg: imgUrl
+            ProductImg: imgUrl,
+            ProductTime: date
         }).then((response)=>{
             setListOfItems([...listOfItems,  {
-                OrderNumber, NumOfItems, ProductName
+                OrderNumber, NumOfItems, ProductName, ProductTime
             }])
             alert("ADDED TO CART");
         });
     };
+
+    function makeid(length) {
+      var result           = '';
+      var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+      var charactersLength = characters.length;
+      for ( var i = 0; i < length; i++ ) {
+          result += characters.charAt(Math.floor(Math.random() * charactersLength));
+      }
+      return result;
+  }
+  
 
     return (
 
