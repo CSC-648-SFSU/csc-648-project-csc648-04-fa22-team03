@@ -27,7 +27,8 @@ jobs:
       # Specify commmand that we're gonna do
       - name: Install modules
         # cd into a folder relative to root of github repo
-        working-directory: ./
+        # working-directory: ./
+        working-directory: ./applications
         # do this command 'npm clean' install inside that folder
         run: npm ci
       - name: Run Tests
