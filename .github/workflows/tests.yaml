@@ -10,7 +10,6 @@ on:
   pull_request:
   # ... and make it manually be run.
   workflow_dispatch: # Allow manual triggering
-
 jobs:
   run-tests:
     # This is the name of this job, and can be specified to run on other jobs
