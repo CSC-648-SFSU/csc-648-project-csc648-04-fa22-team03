@@ -22,6 +22,8 @@ import Neutralize from './pages/products/Neutralize';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 
+// for jest testing
+import Todo from './components/todo';
 
 
 
@@ -32,6 +34,9 @@ function App() {
 
       <>
         <Navbar />
+        <div className='App'>
+          <Todo/>
+        </div>
         <div className='cont'>
           <Routes>
             <Route path="/Home" element={<Home />} />
