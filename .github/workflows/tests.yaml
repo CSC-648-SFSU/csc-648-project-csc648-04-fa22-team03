@@ -1,0 +1,41 @@
+# This file is considered an action since it's under the workflows folder
+# We can as much as we want
+
+# Declare and initalize the name of this test
+name: 'Tests'
+
+# Tells GitHub when we want this action triggered ...
+on:
+  # ... and in this case we want it during pull requests, ...
+  pull request:
+  # ... and make it manually be run.
+  workflow_dispatch: # Allow manual triggering
+
+jobs:
+  run-tests:
+    # This is the name of this job, and can be specified to run on other jobs
+    name: Run Tests
+    # Specifiy hardware we want this to run on
+    # can be specified on multiple platforms
+    runs-on: ubuntu-latest
+    # depends-on: [build] if we the steps to be dependent on another
+    steps:
+      # this is a module that GitHub provides
+      # and it clones whatever branch we're referring to
+      # e.g. if we're merging from test 4 into master,
+      # it'll clone test4 into the vm to do additional things
+      - uses: actions/checkout@v2
+      # Specify commmand that we're gonna do
+      - name: Install modules
+        # specify directory with respect to root of github repo
+        working-directory: ./
+        # do this command npm clean install inside that folder
+        run: npm ci
+      - name: Run Tests
+        working-directory: ./
+        run: |
+          npx jest --coverage --coverageReporters json-summary
+      # Do a step that someone has already created that ...
+      # ... labels percentage of code that were tested
+      - name: Jest Coverage Comment
+      - uses: MishaKev/jest-coverage-comment@main
