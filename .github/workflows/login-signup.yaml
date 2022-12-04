@@ -38,5 +38,5 @@ jobs:
           npx jest --coverage --coverageReporters json-summary
       # Do open-source step that someone has already created that ...
       # ... labels percentage of code that were tested
-      # - name: Jest Coverage Comment
-      # - uses: MishaKev/jest-coverage-comment@main
+      - name: Jest Coverage Comment
+        uses: MishaKev/jest-coverage-comment@main
