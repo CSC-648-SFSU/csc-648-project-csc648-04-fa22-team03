@@ -7,7 +7,7 @@ name: 'Tests'
 # Tells GitHub when we want this action triggered ...
 on:
   # ... and in this case we want it during pull requests, ...
-  pull request:
+  pull_request:
   # ... and make it manually be run.
   workflow_dispatch: # Allow manual triggering
 
