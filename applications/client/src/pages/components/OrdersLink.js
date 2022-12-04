@@ -17,16 +17,6 @@ useEffect(() => {
 
 
 
-
-  
-
-
-
- 
-
-
-
-
 return (
     <><h1>Orders Page</h1><table class="rwd-table">
         <tr>
@@ -38,9 +28,6 @@ return (
         </tr>
         {listOfItems.map((cart) => {
         
-          
-              
-            
                 return (
         <tr>
             <td data-th="REFERENCE NUMBER"> {cart.OrderNumber}</td>

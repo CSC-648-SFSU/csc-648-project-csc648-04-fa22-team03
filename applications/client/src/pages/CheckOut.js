@@ -14,7 +14,7 @@ export default function CheckOut(){
             <div className="cont">
                 <CheckOutLink />  
                 <Routes>
-                <Route path="/userOrders" element={<Orders />} />
+                <Route path="/Orders" element={<Orders />} />
                 </Routes>
             </div>
         </>   
