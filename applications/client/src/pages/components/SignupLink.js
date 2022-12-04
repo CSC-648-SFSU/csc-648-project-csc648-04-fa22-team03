@@ -3,9 +3,7 @@ import Axios from "axios"
 import { useState, useEffect } from "react"
 import './SignupLink.css';
 
-
-
-
+export const validateInput = (str = "") => str.includes("@");
 
 export default function SignupLink() {
 
@@ -53,22 +51,22 @@ export default function SignupLink() {
             <h2>Registration</h2>
             <form action="#">
               <div class="input-box">
-                <input type="text" placeholder="Enter your name" onChange={(event) => {
+                <input role="name" type="text" placeholder="Enter your name" onChange={(event) => {
                     setName(event.target.value);
                 }}/>
               </div>
               <div class="input-box">
-                <input type="text" placeholder="Enter your email"  onChange={(event) => {
+                <input name="email02" role="email" type="text" placeholder="Enter your email"  onChange={(event) => {
                     setEmail(event.target.value);
                 }}/>
               </div>
               <div class="input-box">
-                <input type="password" placeholder="Create password" onChange={(event) => {
+                <input role="password" type="password" placeholder="Create password" onChange={(event) => {
                     setPassword(event.target.value);
                 }}/>
               </div>
               <div class="input-box">
-                <input type="password" placeholder="Confirm password" required></input>
+                <input role="password" type="password" placeholder="Confirm password" required></input>
               </div>
               <div class="policy">
                 <input type="checkbox"></input>
