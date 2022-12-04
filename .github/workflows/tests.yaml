@@ -27,15 +27,15 @@ jobs:
       - uses: actions/checkout@v2
       # Specify commmand that we're gonna do
       - name: Install modules
-        # specify directory with respect to root of github repo
+        # cd into a folder relative to root of github repo
         working-directory: ./
-        # do this command npm clean install inside that folder
+        # do this command 'npm clean' install inside that folder
         run: npm ci
       - name: Run Tests
         working-directory: ./
         run: |
           npx jest --coverage --coverageReporters json-summary
-      # Do a step that someone has already created that ...
+      # Do open-source step that someone has already created that ...
       # ... labels percentage of code that were tested
       - name: Jest Coverage Comment
       - uses: MishaKev/jest-coverage-comment@main
