@@ -29,7 +29,6 @@ import Signup from './pages/Signup';
 function App() {
   return (
     <div className="App">
-
       <>
         <Navbar />
         <div className='cont'>
@@ -38,7 +37,7 @@ function App() {
             <Route path="/About/*" element={<About />} />
             <Route path="/Product/*" element={<Product />} />
             <Route path="/IDK" element={<IDK />} />
-            <Route path="/Login" element={<Login />} />
+            <Route path="/Login/*" element={<Login />} />
             <Route path="/ShoppingCart" element={<ShoppingCart />} />
             <Route path="/CheckOut" element={<CheckOut />} />
             <Route path="/Signup" element={<Signup />} />
@@ -50,8 +49,6 @@ function App() {
           <Route path="/Awake" element={<Awake />} />
           <Route path="/Neutralize" element={<Neutralize />} />
           <Route path="/relax" element={<Relax />} />
-
-
             <Route path="/Ahmed" element={<Ahmed />} />
             <Route path="/Aisha" element={<Aisha />} />
             <Route path="/Chris" element={<Chris />} />
@@ -59,8 +56,11 @@ function App() {
             <Route path="/Shahriz" element={<Shahriz />} />
             <Route path="/Ruqaiyah" element={<Ruqaiyah />} />
           </Routes>
+
         </div>
       </>
+
+
 
 
     </div>

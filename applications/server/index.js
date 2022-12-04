@@ -2,7 +2,9 @@ const express = require("express");
 const app = express();
 const mongoose = require('mongoose');
 const UserModel = require('./models/Users');
-const CartModel = require('./models/Cart')
+const CartModel = require('./models/Cart');
+const LoginModel = require('./models/Login');
+
 const OrderModel = require('./models/Orders')
 const ProductModel = require("./models/Products");
 const cors = require('cors'); 
@@ -12,6 +14,23 @@ app.use(cors());
 
 mongoose.connect(
     "mongodb://admin:4321@13.52.100.0:27017/");
+
+app.get("/getLogin", (req, res) => {
+    LoginModel.find({}, (err , result) => {
+        if(err) {
+            res.json(err);
+        } else {
+            res.json(result);
+        }
+    });
+});
+app.post("/createLogin", async (req, res) => {
+    const login = req.body;
+    const newLogin = new LoginModel(login);
+    await newLogin.save();
+
+    res.json(login);
+})
 
 
 //can move this to routes.js, if needed. 

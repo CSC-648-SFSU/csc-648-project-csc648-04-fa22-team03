@@ -21,19 +21,40 @@ export default function CheckOutLink() {
 //     })
 // }, []);
 
+const [listOfUsers, setListOfUsers] = useState([]);
+const [listOfLogin, setListOfLogin] = useState([]);
+
 
 useEffect(() => {
   Axios.get("http://localhost:3001/getCart").then((response) => {
       setListOfItems(response.data)
   })
+  Axios.get("http://localhost:3001/getUsers").then((response) => {
+    setListOfUsers(response.data)
 })
+Axios.get("http://localhost:3001/getLogin").then((response) => {
+    setListOfLogin(response.data)
+})
+})
+
+
 const [listOfItems, setListOfItems] = useState([]);
 let itemPrice = [];
 
 function redirect() {
-    console.log("hello");
-    window.location.replace("/UserOrders");
-  }
+
+    {listOfUsers.map((user) => {
+        var x =0
+        if(x ==0){
+    
+        
+        console.log("hello");
+        window.location.replace("/Orders");
+        
+        }
+      
+    })}
+}
 
 
 

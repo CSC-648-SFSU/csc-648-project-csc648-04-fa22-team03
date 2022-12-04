@@ -10,6 +10,12 @@ export default function ShoppingCartLink() {
     const [OrderNumber, setOrderNumber] = useState("");
     const [NumOfItems, setnumOfItems] = useState("");
     const [ProductName, setProductName] = useState("");
+    const [listOfLogin, setListOfLogin] = useState([]);
+    const [listOfUsers, setListOfUsers] = useState([]);
+    const [errorMessage, setErrorMessage] = useState('');
+
+
+
 
 
 
@@ -27,12 +33,14 @@ useEffect(() => {
   Axios.get("http://localhost:3001/getCart").then((response) => {
       setListOfItems(response.data)
   })
+  Axios.get("http://localhost:3001/getLogin").then((response) => {
+    setListOfLogin(response.data)
+})
+Axios.get("http://localhost:3001/getUsers").then((response) => {
+    setListOfUsers(response.data)
+})
 })
 
-
-function redirectCheckOut() {
-  window.location.replace("/CheckOut");
-}
 
 
 const [listOfItems, setListOfItems] = useState([]);
@@ -73,10 +81,34 @@ const deleteProduct = (productId) => {
      total = total * itemQuantity;
      
     }
-
-
 })
 }
+
+let loginEmail = [];
+let loginPassword = [];
+{listOfLogin.map((login) => {
+  loginEmail = login.email;
+  loginPassword = login.password;
+})
+}
+let userEmail = [];
+let userPassword = [];
+
+{listOfUsers.map((user) => {
+  userEmail = user.email;
+  userPassword = user.password;
+})
+}
+function redirectCheckOut() {
+  if(userEmail == loginEmail && userPassword == loginPassword){
+      window.location.replace("/CheckOut");
+  } else {
+    prompt("Please Login");
+  }
+}
+
+
+
 
 return (
 <body>
@@ -120,6 +152,7 @@ return (
     </div>
   </div>
 </body>
+
 
         
 )
