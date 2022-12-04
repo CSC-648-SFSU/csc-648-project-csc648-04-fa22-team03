@@ -13,7 +13,12 @@ export default function SignupLink() {
         Axios.get("http://localhost:3001/getUsers").then((response) => {
             setListOfUsers(response.data)
         })
-    }, []);
+
+        Axios.get("http://13.52.100.0/getUsers").then((response) => {
+            setListOfUsers(response.data)
+        })
+    },
+    []);
 
     //Users
     const [listOfUsers, setListOfUsers] = useState([]);
@@ -24,7 +29,7 @@ export default function SignupLink() {
 
     const createUser = () => {
         redirect();
-        Axios.post("http://13.52.253.222:3000/createUser", {
+        Axios.post("http://13.52.100.0:3000/createUser", {
             name, email, password
         }).then((response) => {
             setListOfUsers([...listOfUsers,  {

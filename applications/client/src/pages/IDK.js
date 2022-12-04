@@ -13,6 +13,17 @@ export default function IDK(){
         Axios.get("http://localhost:3001/getProducts").then((response) => {
             setListOfProducts(response.data)
         })
+
+        Axios.get("http://13.52.100.0/getUsers").then((response) => {
+            setListOfUsers(response.data)
+        })
+        Axios.get("http://13.52.100.0/getOrders").then((response) => {
+            setListOfOrders(response.data)
+        })
+        Axios.get("http://13.52.100.0/getProducts").then((response) => {
+            setListOfProducts(response.data)
+        })
+
     }, []);
 
     //Users
@@ -26,7 +37,7 @@ export default function IDK(){
     const [email, setEmail] = useState("");
 
     const createUser = () => {
-        Axios.post("http://13.52.253.222:3000/createUser", {
+        Axios.post("http://13.52.100.0:3000/createUser", {
             name, age, username, email, password, sID, gl
         }).then((response) => {
             setListOfUsers([...listOfUsers,  {

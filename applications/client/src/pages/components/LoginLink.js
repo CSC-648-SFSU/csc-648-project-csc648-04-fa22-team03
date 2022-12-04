@@ -12,8 +12,12 @@ export default function LoginLink() {
         Axios.get("http://localhost:3001/getUsers").then((response) => {
             setListOfUsers(response.data)
         })
-      })
-    
+
+        Axios.get("http://13.52.100.0/getUsers").then((response) => {
+            setListOfUsers(response.data)
+        })
+    })
+
       const [listOfUsers, setListOfUsers] = useState([]);
 
 
