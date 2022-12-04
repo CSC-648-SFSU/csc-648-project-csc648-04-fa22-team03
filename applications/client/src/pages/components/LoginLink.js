@@ -54,7 +54,7 @@ export default function LoginLink({ handleSubmit }) {
                                 <h1>Login</h1>
                                 <form onSubmit={handleSubmit}>
                                     <div class="txt_field">
-                                        <input data-testid="text-input-element" type="text" name="email02" id="email02" onChange={event => setEmail02(event.target.value)} value={email02} onChange={handleOnChange}></input>
+                                        <input data-testid="text-input-element" type="text" name="email02" id="email02" onChange={event => setEmail02(event.target.value)} value={email02} ></input>
                                         <label htmlFor="email">email</label>
                                     </div>
                                     {formData.email && !validateInput(formData.email)} 

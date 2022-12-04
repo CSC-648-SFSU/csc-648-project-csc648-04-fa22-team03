@@ -25,23 +25,11 @@ class Navbar extends Component {
 
                         <CustomLink to="/Home" class = "custom">Home </CustomLink>
                         <CustomLink to="/About">About </CustomLink>
-                        <CustomLink to="/IDK">IDK </CustomLink>
                         <CustomLink to="/ShoppingCart">Shopping Cart </CustomLink>
                         <CustomLink to="/CheckOut">Check out </CustomLink>
                         <CustomLink to="/Orders">Orders </CustomLink>
                         <CustomLink to="/Product">Product </CustomLink>
-                        <CustomLink to="/Login"><Button> Login </Button></CustomLink>
-
-
-                        {/* {MenuItems.map((item, index) => {
-        return (
-            <li key={index}>
-                <a className={item.cName} to="">
-                    {item.title}
-                </a>
-            </li>
-        )
-    })} */}
+                        <CustomLink to="/Login">Login</CustomLink>
                     </ul>
                     
                 </nav>

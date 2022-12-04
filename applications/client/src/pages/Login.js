@@ -11,9 +11,9 @@ export default function Login(){
         <>
             <div className="cont">
                 <LoginLink />  
-                {/* <Routes>
+                <Routes>
                     
-                </Routes> */}
+                </Routes>
             </div>
         </>   
     )

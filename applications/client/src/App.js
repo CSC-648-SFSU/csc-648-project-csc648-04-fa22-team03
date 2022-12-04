@@ -1,7 +1,6 @@
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import About from "./pages/About";
-import IDK from "./pages/IDK"
 import ShoppingCart from "./pages/ShoppingCart"
 import Orders from "./pages/Orders"
 
@@ -37,7 +36,6 @@ function App() {
             <Route path="/Home" element={<Home />} />
             <Route path="/About/*" element={<About />} />
             <Route path="/Product/*" element={<Product />} />
-            <Route path="/IDK" element={<IDK />} />
             <Route path="/Login" element={<Login />} />
             <Route path="/ShoppingCart" element={<ShoppingCart />} />
             <Route path="/CheckOut" element={<CheckOut />} />
