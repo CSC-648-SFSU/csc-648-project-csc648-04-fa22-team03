@@ -12,6 +12,9 @@ useEffect(() => {
     Axios.get("http://localhost:3001/getProducts").then((response) => {
         setListOfProducts(response.data)
     })
+    Axios.get("http://13.52.100.0:3001/getProducts").then((response) => {
+        setListOfProducts(response.data)
+    })
   })
 
   const [listOfProducts, setListOfProducts] = useState([]);
