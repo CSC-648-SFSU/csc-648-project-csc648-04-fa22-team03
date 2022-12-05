@@ -84,6 +84,15 @@ const deleteProduct = (productId) => {
 })
 }
 
+{listOfItems.map((cart) => {
+  for(let i =0; i < cart.NumOfItems.length; i++){
+    
+  }
+   
+})
+}
+
+
 let loginEmail = [];
 let loginPassword = [];
 {listOfLogin.map((login) => {

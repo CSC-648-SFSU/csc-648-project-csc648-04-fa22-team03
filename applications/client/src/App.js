@@ -4,9 +4,9 @@ import About from "./pages/About";
 import IDK from "./pages/IDK"
 import ShoppingCart from "./pages/ShoppingCart"
 import Orders from "./pages/Orders"
-
 import CheckOut from "./pages/CheckOut"
 import Product from "./pages/Product"
+import Receipt from "./pages/Receipt"
 import Unique from "./pages/Unique"
 import Home from "./pages/Home"
 import { Route, Routes } from 'react-router-dom';
@@ -19,7 +19,6 @@ import Shahriz from "./pages/People/Shahriz";
 import Awake from './pages/products/Awake';
 import Relax from './pages/products/relax';
 import Neutralize from './pages/products/Neutralize';
-
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 
@@ -40,8 +39,9 @@ function App() {
             <Route path="/IDK" element={<IDK />} />
             <Route path="/Login/*" element={<Login />} />
             <Route path="/ShoppingCart" element={<ShoppingCart />} />
-            <Route path="/CheckOut" element={<CheckOut />} />
+            <Route path="/CheckOut/*" element={<CheckOut />} />
             <Route path="/Signup" element={<Signup />} />
+            <Route path="/Receipt" element={<Receipt />} />
             <Route path="/Orders" element={<Orders />} />
             <Route path="/Unique/*" element={<Unique />} />
 

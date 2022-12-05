@@ -44,7 +44,7 @@ let date = formatAMPM();
     let randomInt = makeid(10);
     var product = "Neutralize"
        var imgUrl = "/neutralize.png"
-       let price =21;
+       let price =69;
        count++;
       Axios.post("http://localhost:3001/createCart",{
           OrderNumber: randomInt,

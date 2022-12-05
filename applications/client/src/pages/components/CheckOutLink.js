@@ -8,9 +8,6 @@ import "./CheckOut.css"
 export default function CheckOutLink() {
 
 
-    const [OrderNumber, setOrderNumber] = useState("");
-    const [NumOfItems, setnumOfItems] = useState("");
-    const [ProductName, setProductName] = useState("");
 
 
 
@@ -21,58 +18,21 @@ export default function CheckOutLink() {
 //     })
 // }, []);
 
-const [listOfUsers, setListOfUsers] = useState([]);
-const [listOfLogin, setListOfLogin] = useState([]);
 
 
-useEffect(() => {
-  Axios.get("http://localhost:3001/getCart").then((response) => {
-      setListOfItems(response.data)
-  })
-  Axios.get("http://localhost:3001/getUsers").then((response) => {
-    setListOfUsers(response.data)
-})
-Axios.get("http://localhost:3001/getLogin").then((response) => {
-    setListOfLogin(response.data)
-})
-})
-
-
-const [listOfItems, setListOfItems] = useState([]);
-let itemPrice = [];
 
 function redirect() {
+    window.location.replace("/Login");
 
-    {listOfUsers.map((user) => {
-        var x =0
-        if(x ==0){
-    
-        
-        console.log("hello");
-        window.location.replace("/Orders");
-        
-        }
-      
-    })}
 }
 
 
 
 
-let total =0;
-
-{listOfItems.map((cart) => {
-
-    itemPrice = parseInt(cart.ProductPrice);
-    total += itemPrice;
-  
-})}
-
 return (
-
     <div class="wrapper">
     <div class="container">
-        <form action="">
+        <form>
             <h1>
                 <i class="fas fa-shipping-fast"></i>
                 Shipping Details
@@ -123,8 +83,8 @@ return (
                 </div>
             </div>
             <div class="btns">
-                <button onClick={redirect}>Purchase</button>
-                <button>Back to cart</button>
+               <button> <a href = "/Receipt">Purchase</a></button>
+                <button><a href = "/ShoppingCart"> Back to cart</a></button>
             </div>
         </form>
     </div>
