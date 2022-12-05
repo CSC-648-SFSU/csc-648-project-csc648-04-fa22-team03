@@ -6,6 +6,7 @@ import OrdersLink from "./components/OrdersLink";
 
 
 
+
 export default function UserOrders() {
 
     return (
@@ -13,6 +14,7 @@ export default function UserOrders() {
             <div className="cont">
                 <OrdersLink />  
                 <Routes>
+                <Route path="/Orders" element={<OrdersLink />} />
                 </Routes>
             </div>
         </>
