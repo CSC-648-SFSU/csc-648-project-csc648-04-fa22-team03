@@ -39,7 +39,7 @@ let date = formatAMPM();
 
   const createCart = () => {
        var randomInt = makeid(10);
-       let price = 69;
+       let price = 21;
        var imgUrl = "/relax.png"
        var product = "Relax"
       Axios.post("http://localhost:3001/createCart",{
