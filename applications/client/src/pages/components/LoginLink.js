@@ -3,7 +3,8 @@ import { Link, useMatch, useResolvedPath } from "react-router-dom"
 import { useState, useEffect } from "react"
 import Axios from "axios"
 
-export default function LoginLink() {
+export const validateInput = (str = "") => str.includes("@");
+export default function LoginLink({ handleSubmit }) {
 
 
     useEffect(() => {
@@ -27,6 +28,9 @@ export default function LoginLink() {
 
     const [listOfLogin, setListOfLogin] = useState([]);
     const [listOfUsers, setListOfUsers] = useState([]);
+
+    const [formData, setFormData] = useState({});
+    const handleOnChange = ({ target: { name, value } }) => setFormData((prev) => ({ ...prev, [name]: value }));
 
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
@@ -84,16 +88,13 @@ export default function LoginLink() {
                         <h1>Login</h1>
                         <form >
                             <div class="txt_field">
-                                <input type="text" onChange={(event) => {
-                                    setEmail(event.target.value);
-                                }} />
-                                <label>email</label>
+                                <input data-testid="text-input-element" type="text" name="email" id="email" onChange={event => setEmail(event.target.value)} value={email}></input>
+                                <label htmlFor="email">email</label>
                             </div>
+                            {formData.email && !validateInput(formData.email)} 
                             <div class="txt_field">
-                                <input type="password" onChange={(event) => {
-                                    setPassword(event.target.value);
-                                }} />
-                                <label>password</label>
+                            <input data-testid="password-input-element" type="password" name="password" id="password" onChange={event => setPassword(event.target.value)} value={password}></input>
+                            <label htmlFor="password">password</label>
                             </div>
                             <div class="pass">Forgot Password?</div>
                             <input onClick={createLogin} type="submit"></input>
