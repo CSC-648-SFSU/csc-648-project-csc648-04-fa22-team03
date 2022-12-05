@@ -9,7 +9,7 @@ export default function Home(){
         //         <% }) %>
         //     </div>
 
-        <h1>Home Page</h1>
+        <div data-testid="home-1">Home Page</div>
         // </section>
     
     )

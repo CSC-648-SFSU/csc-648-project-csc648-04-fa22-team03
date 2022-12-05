@@ -13,6 +13,10 @@ useEffect(() => {
     Axios.get("http://localhost:3001/getCart").then((response) => {
         setListOfItems(response.data)
     })
+
+    Axios.get("http://13.52.100.0:3001/getCart").then((response) => {
+        setListOfItems(response.data)
+    })
   })
 
 return (
@@ -37,7 +41,5 @@ return (
         })}
     </table></>
 
-
-        
 )
 }
