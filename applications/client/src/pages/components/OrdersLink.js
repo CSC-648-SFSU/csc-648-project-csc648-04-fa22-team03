@@ -19,12 +19,10 @@ useEffect(() => {
     })
   })
 
-
-
 return (
     <><h1>Orders Page</h1><table class="rwd-table">
         <tr>
-            <th>REFERENCE NUMBER</th>
+            <th>REFERENCE ID</th>
             <th>DATE</th>
             <th>TOTAL</th>
             <th>STATUS</th>
@@ -41,8 +39,7 @@ return (
         </tr>
          )
         })}
-
-    </table><p>&larr; Drag window (in editor or full page view) to see the effect. &rarr;</p></>
+    </table></>
 
 )
 }

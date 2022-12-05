@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Arimo");
-body {
+.body {
   display: flex;
   justify-content: center;
 }
@@ -33,7 +33,7 @@ body {
   padding: 5% 10%;
 }
 
-h1 {
+.h1 {
   align-self: center;
 }
 
@@ -170,7 +170,7 @@ button:focus {
     text-align: center;
   }
 
-  input {
+  .input {
     margin: 5px 0;
     min-height: 30px;
   }
