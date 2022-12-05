@@ -13,6 +13,10 @@ useEffect(() => {
     Axios.get("http://localhost:3001/getCart").then((response) => {
         setListOfItems(response.data)
     })
+
+    Axios.get("http://13.52.100.0:3001/getCart").then((response) => {
+        setListOfItems(response.data)
+    })
   })
 
 
@@ -40,7 +44,5 @@ return (
 
     </table><p>&larr; Drag window (in editor or full page view) to see the effect. &rarr;</p></>
 
-
-        
 )
 }
