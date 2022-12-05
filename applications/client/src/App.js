@@ -7,6 +7,7 @@ import Orders from "./pages/Orders"
 
 import CheckOut from "./pages/CheckOut"
 import Product from "./pages/Product"
+import Unique from "./pages/Unique"
 import Home from "./pages/Home"
 import { Route, Routes } from 'react-router-dom';
 import Ahmed from "./pages/People/Ahmed";
@@ -42,6 +43,8 @@ function App() {
             <Route path="/CheckOut" element={<CheckOut />} />
             <Route path="/Signup" element={<Signup />} />
             <Route path="/Orders" element={<Orders />} />
+            <Route path="/Unique/*" element={<Unique />} />
+
           </Routes>
         </div>
         <div className="cont">

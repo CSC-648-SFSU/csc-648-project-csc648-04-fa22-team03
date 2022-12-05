@@ -16,6 +16,8 @@ useEffect(() => {
 
   const [listOfProducts, setListOfProducts] = useState([]);
 
+  var randomNumner = Math.random
+
 
 
     function Awake() {
